@@ -1,0 +1,29 @@
+{
+    "extends": [ "airbnb", "prettier", "plugin:import/errors", "plugin:import/warnings"],
+    "parser": "@babel/eslint-parser",
+    "parserOptions":{
+      "allowImportExportEverywhere": false,
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": ["@babel/preset-react"]
+      }
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+        "import/prefer-default-export": 0,
+        "react/jsx-props-no-spreading": "off",
+        "throwIfNamespace": 0,
+        "react/function-component-definition":  [0, { "namedComponents": "function-declaration" }]
+    },
+    "globals": {
+        "document": false
+    }
+    ,
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "moduleDirectory": ["node_modules", "src/"]
+          }
+        }
+      }
+}
